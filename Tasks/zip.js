@@ -8,12 +8,6 @@ const zip = (a, b) => {
   let j = 0;
   for (const x of b) {
     const CELL = [a[i++], x];
-    if (i < j) {
-      delete a[i++];
-    } else {
-      (() => (b[j++] = CELL))();
-    }
-    if (CELL[0] == undefined) b.length -= 1;
   }
   return b;
 };
