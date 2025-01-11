@@ -2,13 +2,10 @@
 // Sum all numbers from an array
 'use strict';
 const sum = (arr) => {
-  let total = 0;
-  for (const value of arr) {
-    const type = typeof value;
-    if (type === 'number') {
-      total += value;
-    }
-  }
+  let total = arr.reduce(
+    (acc, curValue) => (typeof curValue === 'number' ? acc + curValue : acc),
+    0,
+  );
   return total;
 };
 
