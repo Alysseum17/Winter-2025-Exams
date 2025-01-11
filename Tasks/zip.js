@@ -4,12 +4,10 @@
 const zip = (a, b) => {
   const zipArr = [];
   const size = Math.min(a.length, b.length);
-  let i = 0;
-  let j = 0;
-  for (const x of b) {
-    const CELL = [a[i++], x];
+  for (let i = 0; i < size; i++) {
+    zipArr[i] = [a[i], b[i]];
   }
-  return b;
+  return zipArr;
 };
 
 module.exports = zip;
