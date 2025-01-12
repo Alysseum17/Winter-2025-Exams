@@ -2,7 +2,7 @@
 // Merge two dictionaries
 'use strict';
 const mergeTwoObjects = (objectOne, objectTwo) => {
-  const mergedObject = Object.assign({}, objectOne, objectTwo);
+  const mergedObject = { ...objectOne, ...objectTwo };
   return mergedObject;
 };
 
