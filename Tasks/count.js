@@ -2,11 +2,11 @@
 // Sum all number values in dict
 'use strict';
 const count = (obj) => {
-  let sum = 0;
   const values = Object.values(obj);
-  for (const value of values) {
-    if (typeof value === 'number') sum += value;
-  }
+  let sum = values.reduce(
+    (acc, curValue) => (typeof curValue === 'number' ? acc + curValue : acc),
+    0,
+  );
   return sum;
 };
 
