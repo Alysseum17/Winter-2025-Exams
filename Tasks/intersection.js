@@ -3,14 +3,13 @@
 'use strict';
 const intersection = (objectOne, objectTwo) => {
   const keysObjOne = Object.keys(objectOne);
+  const intersectionObject = {};
   for (const value of keysObjOne) {
     if (objectOne[value] === objectTwo[value]) {
-      objectTwo[value] = objectOne[value];
-    } else {
-      delete objectOne[value];
+      intersectionObject[value] = objectOne[value];
     }
   }
-  return objectOne;
+  return intersectionObject;
 };
 
 module.exports = intersection;
