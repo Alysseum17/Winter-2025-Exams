@@ -1,7 +1,7 @@
 // Refactor following solution
 // Copy all values from dict except listed
 'use strict';
-const EXCEPT = (dict, ...deleteValues) => {
+const except = (dict, ...deleteValues) => {
   const result = {};
   const keys = Object.keys(dict);
   for (const value of keys) {
@@ -12,4 +12,4 @@ const EXCEPT = (dict, ...deleteValues) => {
   return result;
 };
 
-module.exports = EXCEPT;
+module.exports = except;
