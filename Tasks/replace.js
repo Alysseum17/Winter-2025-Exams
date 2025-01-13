@@ -5,18 +5,19 @@ const replace = (str, subString, newString) => {
   if (subString === '') {
     return str;
   } else {
-    let src = str;
     let resultString = '';
-    do {
-      const subStrIndex = src.indexOf(subString);
-      if (subStrIndex === -1) {
-        return resultString + src;
-      } else {
-        const firstPart = src.substring(0, subStrIndex);
-        src = src.substring(subStrIndex + subString.length, src.length);
-        resultString += firstPart + newString;
-      }
-    } while (true);
+    const subStrIndex = str.indexOf(subString);
+    if (subStrIndex === -1) {
+      return resultString + str;
+    } else {
+      const firstPart = str.substring(0, subStrIndex);
+      let secondPart = str.substring(
+        subStrIndex + subString.length,
+        str.length,
+      );
+      resultString += firstPart + newString + secondPart;
+      return resultString;
+    }
   }
 };
 
