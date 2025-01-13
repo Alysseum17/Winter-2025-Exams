@@ -3,9 +3,9 @@
 'use strict';
 const invert = (A) => {
   const T = Object.keys(A);
-  T.forEach((i) => {
-    T[i] = A.pop();
-  });
+  for (const key of T) {
+    T[key] = A.pop();
+  }
   return T;
 };
 
