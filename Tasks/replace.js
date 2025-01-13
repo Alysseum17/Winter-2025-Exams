@@ -3,12 +3,13 @@
 'use strict';
 const replace = (str, subString, newString) => {
   if (subString === '') return str;
-  let resultString = '';
   const subStrIndex = str.indexOf(subString);
-  if (subStrIndex === -1) return resultString + str;
-  const firstPart = str.substring(0, subStrIndex);
-  const secondPart = str.substring(subStrIndex + subString.length, str.length);
-  resultString += firstPart + newString + secondPart;
+  if (subStrIndex === -1) return str;
+  const stringArr = str.split(' ');
+  for (let i = 0; i < stringArr.length; i++) {
+    if (stringArr[i] === subString) stringArr[i] = newString;
+  }
+  const resultString = stringArr.join(' ');
   return resultString;
 };
 
