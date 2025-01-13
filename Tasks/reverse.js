@@ -3,11 +3,11 @@
 'use strict';
 const Reverse = (DATA) => {
   const T = Object.keys(DATA);
-  T.forEach((_) => {
-    const v1 = DATA[_];
-    DATA[v1] = _;
-    delete DATA[_];
-  });
+  for (const key of T) {
+    const v1 = DATA[key];
+    DATA[v1] = key;
+    delete DATA[key];
+  }
   return DATA;
 };
 
