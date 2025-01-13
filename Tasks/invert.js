@@ -4,7 +4,7 @@
 const invert = (A) => {
   const T = Object.keys(A);
   for (const key of T) {
-    T[key] = A.pop();
+    T[key] = A[A.length - key - 1];
   }
   return T;
 };
