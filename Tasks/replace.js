@@ -3,14 +3,6 @@
 'use strict';
 const replace = (str, subString, newString) => {
   if (subString === '') return str;
-  const subStrIndex = str.indexOf(subString);
-  if (subStrIndex === -1) return str;
-  const stringArr = str.split(' ');
-  for (let i = 0; i < stringArr.length; i++) {
-    if (stringArr[i] === subString) stringArr[i] = newString;
-  }
-  const resultString = stringArr.join(' ');
-  return resultString;
+  return str.replace(subString, newString);
 };
-
 module.exports = replace;
