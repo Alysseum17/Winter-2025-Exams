@@ -3,7 +3,7 @@
 'use strict';
 const count = (obj) => {
   const values = Object.values(obj);
-  let sum = values.reduce(
+  const sum = values.reduce(
     (acc, curValue) => (typeof curValue === 'number' ? acc + curValue : acc),
     0,
   );
